@@ -11,3 +11,11 @@ int slen(char str[]){//кол-во символов в строке
 	return len;
 }
 
+int mode1(int lenght, char &password[]) {
+	char AZaz[] = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";	
+	srand(time(0));
+	for (int i = 0; i < lenght; i++){
+		password[i] = AZaz[rand()%slen(AZaz)+1];
+	}
+	return 0;	
+}
