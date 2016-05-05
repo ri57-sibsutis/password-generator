@@ -19,3 +19,12 @@ int mode1(int lenght, char &password[]) {
 	}
 	return 0;	
 }
+
+int mode4(int lenght, char &password[]) {
+	char ch[] = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM01234567890%*?!@#";	
+	srand(time(0));
+	for (int i = 0; i < lenght; i++){
+		password[i] = ch[rand()%slen(ch)+1];
+	}
+	return 0;	
+}
