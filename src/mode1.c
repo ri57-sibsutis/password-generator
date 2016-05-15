@@ -20,6 +20,14 @@ int mode1(int lenght, char &password[]) {
 	return 0;	
 }
 
+void mode2(int lenght, char password[]) {
+	char num[] = "0123456789";	
+	srand(time(0));
+	for (int i = 0; i < lenght; i++){
+		password[i] = num[rand() % slen(num) + 1];
+	}
+}
+
 int mode4(int lenght, char &password[]) {
 	char ch[] = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM01234567890%*?!@#";	
 	srand(time(0));
