@@ -1,1 +1,1 @@
-# password-generator
+https://travis-ci.org/ri57-sibsutis/password-generator.svg?branch=feature
