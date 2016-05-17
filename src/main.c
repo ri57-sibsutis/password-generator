@@ -6,7 +6,7 @@
 int main() {
 	srand(time(0));
 	int lenght, amount, mode;
-	int i, j;
+	int i,j;
     printf("\nPassword length: ");
     scanf("%d", &lenght);
     char password[200] = {0};
@@ -16,8 +16,8 @@ int main() {
     scanf("%d", &mode);
     if (mode == 1){
     	for(i=0; i < amount; i++){
-    		mode1(lenght, password);
-			printf("%s\n",password);
+    		j=mode1(lenght, password);
+			printf("j=%d    %s\n",j,password);
 		}
 	}
 	if (mode == 2){
@@ -29,6 +29,7 @@ int main() {
 	if (mode == 4){
     	for(i=0; i < amount; i++){
     		mode4(lenght, password);
+    		printf("%s\n", password);
 		}
 	}
     return 0;

@@ -13,32 +13,51 @@ int slen(char str[]){
 
 int mode1(int lenght, char password[]) {
 	char AZ[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
-	char az[] = "qwertyuiopasdfghjklzxcvbnm";	
-	for (int i = 0; i < lenght; i=i+2){
-		password[i] = AZ[rand()%slen(AZ)+1];
-		password[i+1] = az[rand()%slen(az)+1];
+	char az[] = "qwertyuiopasdfghjklzxcvbnm";
+	int kol = (rand() % lenght + 1) + 1;
+	for (int i = 0; i < lenght; i++){
+		password[i] = AZ[rand() % slen(AZ) + 0];
 	}
-	return 0;	
+	for (int j = 1; j <= kol; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = az[rand() % slen(az) + 0];
+	}
+	password[lenght] = '\0';
+	return slen(password);	
 }
 
 int mode2(int lenght, char password[]) {
 	char num[] = "0123456789";	
 	for (int i = 0; i < lenght; i++){
-		password[i] = num[rand() % slen(num) + 1];
+		password[i] = num[rand() % slen(num) + 0];
 	}
-	return 0;
+	password[lenght] = '\0';
+	return slen(password);
 }
 
 int mode4(int lenght, char password[]) {
 	char ch[] = "%*?!@#";
 	char AZ[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
 	char az[] = "qwertyuiopasdfghjklzxcvbnm";
-	char num[] = "0123456789";	
-	for (int i = 0; i < lenght-3; i=i+4){
-		password[i] = AZ[rand()%slen(AZ)+1];
-		password[i+2] = az[rand()%slen(az)+1];
-		password[i+1] = ch[rand()%slen(ch)+1];
-		password[i+4] = num[rand()%slen(num)+1];
+	char num[] = "0123456789";
+	int kolAZ = (rand() % lenght + 1) + 1;
+	int kolch = (rand() % lenght + 1) + 1;
+	int kolnum = (rand() % lenght + 1) + 1;
+	for (int i = 0; i < lenght; i++){
+		password[i] = az[rand() % slen(az) + 0];
 	}
-	return 0;	
+	for (int j = 1; j < kolAZ; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = AZ[rand() % slen(AZ) + 0];
+	}
+	for (int j = 1; j < kolnum; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = num[rand() % slen(num) + 0];
+	}
+	for (int j = 1; j < kolch; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = ch[rand() % slen(ch) + 0];
+	}
+	password[lenght] = '\0';	
+	return slen(password);	
 }
