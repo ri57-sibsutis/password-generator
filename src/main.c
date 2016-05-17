@@ -1,7 +1,7 @@
 #include <stdio.h>
+#include "mode.h"
 
-int main()
-{
+int main() {
 	int lenght, amount, mode;
 	int i;
     printf("\nPassword length: ");
@@ -14,12 +14,13 @@ int main()
     if (mode == 1){
     	for(i=0; i < amount; i++){
     		mode1(lenght, password);
-			printf("%s",password);
+			printf("%s\n",password);
 		}
 	}
 	if (mode == 2){
     	for(i=0; i < amount; i++){
     		mode2(lenght, password);
+			printf("%s\n", password);
 		}
 	}
 	if (mode == 4){
