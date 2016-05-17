@@ -40,9 +40,9 @@ int mode4(int lenght, char password[]) {
 	char AZ[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
 	char az[] = "qwertyuiopasdfghjklzxcvbnm";
 	char num[] = "0123456789";
-	int kolAZ = (rand() % lenght + 1) + 1;
-	int kolch = (rand() % lenght + 1) + 1;
-	int kolnum = (rand() % lenght + 1) + 1;
+	int kolAZ = (rand() % lenght + 1);
+	int kolch = (rand() % lenght + 1);
+	int kolnum = (rand() % lenght + 1);
 	for (int i = 0; i < lenght; i++){
 		password[i] = az[rand() % slen(az) + 0];
 	}
