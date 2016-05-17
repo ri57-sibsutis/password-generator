@@ -6,31 +6,26 @@ int main()
 	int i;
     printf("\nPassword length: ");
     scanf("%d", &lenght);
+    char password[lenght];
     printf("\nNumber of passwords: ");
     scanf("%d", &amount);
     printf("\nThe used symbols\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nNumber of the chosen set: ");
     scanf("%d", &mode);
     if (mode == 1){
     	for(i=0; i < amount; i++){
-    		mode1(lenght);
+    		mode1(lenght, password);
+			printf("%s",password);
 		}
 	}
 	if (mode == 2){
     	for(i=0; i < amount; i++){
-    		mode2(lenght);
-		}
-	}
-	if (mode == 3){
-    	for(i=0; i < amount; i++){
-    		mode3(lenght);
+    		mode2(lenght, password);
 		}
 	}
 	if (mode == 4){
     	for(i=0; i < amount; i++){
-    		mode1(lenght);
+    		mode4(lenght, password);
 		}
 	}
-    getchar();
-    getchar();
     return 0;
 }
