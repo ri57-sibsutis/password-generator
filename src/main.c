@@ -1,12 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "mode.h"
+#include <time.h>
 
 int main() {
+	srand(time(0));
 	int lenght, amount, mode;
-	int i;
+	int i, j;
     printf("\nPassword length: ");
     scanf("%d", &lenght);
-    char password[lenght];
+    char password[200] = {0};
     printf("\nNumber of passwords: ");
     scanf("%d", &amount);
     printf("\nThe used symbols\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nNumber of the chosen set: ");
