@@ -16,8 +16,8 @@ int main() {
     scanf("%d", &mode);
     if (mode == 1){
     	for(i=0; i < amount; i++){
-    		j=mode1(lenght, password);
-			printf("j=%d    %s\n",j,password);
+    		mode1(lenght, password);
+			printf("%s\n",password);
 		}
 	}
 	if (mode == 2){

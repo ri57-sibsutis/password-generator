@@ -14,7 +14,7 @@ int slen(char str[]){
 int mode1(int lenght, char password[]) {
 	char AZ[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
 	char az[] = "qwertyuiopasdfghjklzxcvbnm";
-	int kol = (rand() % lenght + 1) + 1;
+	int kol = (rand() % (lenght-1) + 1) + 1;
 	for (int i = 0; i < lenght; i++){
 		password[i] = AZ[rand() % slen(AZ) + 0];
 	}
