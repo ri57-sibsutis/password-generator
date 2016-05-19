@@ -2,28 +2,32 @@
 #include <stdlib.h>
 #include "mode.h"
 #include <time.h>
+#include <locale.h>
+
+setlocale(LC_ALL, "Rus");
 
 int main() {
 	srand(time(0));
 	int lenght, amount, mode, statusEND = 1, statusL = 1, statusM = 1, statusA = 1;
 	int i;
-    printf("\nPassword length: ");
+    printf("\nВведите длину пароля: ");
     scanf("%d", &lenght);
     char password[200] = {0};
-    printf("\nNumber of passwords: ");
+    printf("\nВведите количество паролей: ");
     scanf("%d", &amount);
-    printf("\nThe used symbols\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nNumber of the chosen set: ");
+    printf("\nДоступные режимы работы:\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nВыберите режим работы: ");
     scanf("%d", &mode);
     check (lenght, amount, mode, &statusL, &statusA, &statusM);
 	if (statusEND == 0) {
 		if (statusL == 0)
-			printf("Invalid input lenght (4 <= lenght <= 20)!");
+			printf("Некорректная длина пароля!\nМинимальное количество символов - 4, максимальное - 20");
 		if (statusA == 0)
-			printf("Invalid input number (1 <= number <= 20)!");
+			printf("Некорректное количество паролей!\nМинимальное количество паролей - 1, максимальное - 20");
 		if (statusM == 0)
-			printf("Invalid input mode (1 <= mode <= 4)!");
+			printf("Некорректно выбран режим работы!");
 	}
 	if (statusEND == 1) {
+		printf("Пароли успешно сгенерированы:\n")
    		if (mode == 1){
     		for(i=0; i < amount; i++){
     			mode1(lenght, password);
