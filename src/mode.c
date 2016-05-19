@@ -61,17 +61,36 @@ int mode4(int lenght, char password[]) {
 	password[lenght] = '\0';	
 	return slen(password);	
 }
-
+int mode3(int lenght, char password[]) {
+	char AZ[] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	char az[] = "qwertyuiopasdfghjklzxcvbnm";
+	char num[] = "0123456789";
+	int kolAZ = (rand() % lenght + 1);
+	int kolnum = (rand() % lenght + 1);
+	for (int i = 0; i < lenght; i++){
+		password[i] = az[rand() % slen(az) + 0];
+	}
+	for (int j = 1; j < kolAZ; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = AZ[rand() % slen(AZ) + 0];
+	}
+	for (int j = 1; j < kolnum; j++){
+		int dop = rand() % lenght + 1;
+		password[dop] = num[rand() % slen(num) + 0];
+	}
+	password[lenght] = '\0';	
+	return slen(password);	
+}
 int check (int lenght, int amount, int mode, int *statusL, int *statusA, int *statusM){
-	int statusEND;
+	int statusEND = 0;
 	if ((lenght<4) || (lenght>20))
-		statusL=0;
+		*statusL = 0;
 	if ((amount<1) || (amount>20))
-		statusA=0;
+		*statusA = 0;
 	if ((mode<1) || (mode>20))
-		statusM=0;
+		*statusM = 0;
 	if ((*statusL==1) & (*statusM==1) & (*statusA==1))
-		statusEND=1;
+		statusEND = 1;
 	return statusEND;
 }
 
