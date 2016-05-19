@@ -4,9 +4,8 @@
 #include <time.h>
 #include <locale.h>
 
-setlocale(LC_ALL, "Rus");
-
 int main() {
+	setlocale(LC_ALL, "Rus");
 	srand(time(0));
 	int lenght, amount, mode, statusEND = 1, statusL = 1, statusM = 1, statusA = 1;
 	int i;
@@ -17,17 +16,17 @@ int main() {
     scanf("%d", &amount);
     printf("\nДоступные режимы работы:\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nВыберите режим работы: ");
     scanf("%d", &mode);
-    check (lenght, amount, mode, &statusL, &statusA, &statusM);
+    statusEND = check (lenght, amount, mode, &statusL, &statusA, &statusM);
 	if (statusEND == 0) {
 		if (statusL == 0)
-			printf("Некорректная длина пароля!\nМинимальное количество символов - 4, максимальное - 20");
+			printf("\nНекорректная длина пароля!\nМинимальное количество символов - 4, максимальное - 20\n");
 		if (statusA == 0)
-			printf("Некорректное количество паролей!\nМинимальное количество паролей - 1, максимальное - 20");
+			printf("\nНекорректное количество паролей!\nМинимальное количество паролей - 1, максимальное - 20\n");
 		if (statusM == 0)
-			printf("Некорректно выбран режим работы!");
+			printf("\nНекорректно выбран режим работы!\n");
 	}
 	if (statusEND == 1) {
-		printf("Пароли успешно сгенерированы:\n")
+		printf("Пароли успешно сгенерированы:\n");
    		if (mode == 1){
     		for(i=0; i < amount; i++){
     			mode1(lenght, password);
