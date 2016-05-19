@@ -9,9 +9,9 @@ int main() {
 	srand(time(0));
 	int lenght, amount, mode, statusEND = 1, statusL = 1, statusM = 1, statusA = 1;
 	int i;
+	char password[21] = {0};
     printf("\nВведите длину пароля: ");
     scanf("%d", &lenght);
-    char password[200] = {0};
     printf("\nВведите количество паролей: ");
     scanf("%d", &amount);
     printf("\nДоступные режимы работы:\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nВыберите режим работы: ");

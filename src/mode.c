@@ -89,7 +89,7 @@ int check (int lenght, int amount, int mode, int *statusL, int *statusA, int *st
 		*statusA = 0;
 	if ((mode<1) || (mode>20))
 		*statusM = 0;
-	if ((*statusL == 1) && (*statusM == 1) && (*statusA == 1))
+	if ((*statusL == 1) & (*statusM == 1) & (*statusA == 1))
 		statusEND = 1;
 	return statusEND;
 }
