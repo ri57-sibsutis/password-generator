@@ -5,8 +5,8 @@
 
 int main() {
 	srand(time(0));
-	int lenght, amount, mode, statusEND = 0, statusL = 1, statusM = 1, statusA = 1;
-	int i,j;
+	int lenght, amount, mode, statusEND = 1, statusL = 1, statusM = 1, statusA = 1;
+	int i;
     printf("\nPassword length: ");
     scanf("%d", &lenght);
     char password[200] = {0};
