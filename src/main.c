@@ -14,14 +14,14 @@ int main() {
     scanf("%d", &amount);
     printf("\nThe used symbols\n1) a-z, A-Z\n2) 0-9\n3) a-z, A-Z, 0-9\n4) a-z, A-Z, 0-9, {%%, *, ?, !, @, #}\nNumber of the chosen set: ");
     scanf("%d", &mode);
-    if (statusEND == 0) {
-		check (lenght, amount, mode, &statusL, &statusA, &statusM);
+    check (lenght, amount, mode, &statusL, &statusA, &statusM);
+	if (statusEND == 0) {
 		if (statusL == 0)
-			printf("Invalid input lenght!");
+			printf("Invalid input lenght (4 <= lenght <= 20)!");
 		if (statusA == 0)
-			printf("Invalid input number!");
+			printf("Invalid input number (1 <= number <= 20)!");
 		if (statusM == 0)
-			printf("Invalid input mode!");
+			printf("Invalid input mode (1 <= mode <= 4)!");
 	}
 	if (statusEND == 1) {
    		if (mode == 1){
