@@ -89,18 +89,32 @@ int mode3(int lenght, char password[]) {
 	char az[] = "qwertyuiopasdfghjklzxcvbnm";
 	char num[] = "0123456789";
 	char nsym[] = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789";
-	int kolAZ = (rand() % lenght + 1);
-	int kolnum = (rand() % lenght + 1);
 	for (int i = 0; i < lenght; i++){
-		password[i] = az[rand() % slen(az) + 0];
+		password[i] = '*';
 	}
-	for (int j = 1; j < kolAZ; j++){
-		int dop = rand() % lenght + 1;
-		password[dop] = AZ[rand() % slen(AZ) + 0];
+	int kol = lenght - 2;
+	int k=0;
+	int kolAZ = (rand() % kol + 1);
+	while (k < kolAZ){
+		int dop = rand() % lenght + 0;
+		if (password[dop] == '*'){
+			password[dop] = AZ[rand() % slen(AZ) + 0];
+			k = k+1;
+		}
 	}
-	for (int j = 1; j < kolnum; j++){
-		int dop = rand() % lenght + 1;
-		password[dop] = num[rand() % slen(num) + 0];
+	kol = lenght - 1 - kolAZ;
+	k=0;
+	int kolaz = (rand() % kol + 1);
+	while (k < kolaz){
+		int dop = rand() % lenght + 0;
+		if (password[dop] == '*'){
+			password[dop] = az[rand() % slen(az) + 0];
+			k = k+1;
+		}
+	}	
+	for (int i = 0; i < lenght; i++){
+		if (password[i] == '*')
+			password[i] = num[rand() % slen(num) + 0];
 	}
 	password[lenght] = '\0';	
 	return dopsym(password,nsym);	
