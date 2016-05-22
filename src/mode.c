@@ -141,13 +141,13 @@ int mode3(int lenght, char password[]) {
 
 int check (int lenght, int amount, int mode, int *statusL, int *statusA, int *statusM){
 	int statusEND = 0;
-	if ((lenght<4) || (lenght>20))
+	if ((lenght < 4) || (lenght > 20))
 		*statusL = 0;
-	if ((amount<1) || (amount>20))
+	if ((amount < 1) || (amount > 20))
 		*statusA = 0;
-	if ((mode<1) || (mode>20))
+	if ((mode < 1)|| (mode > 4))
 		*statusM = 0;
-	if ((*statusL == 1) & (*statusM == 1) & (*statusA == 1))
+	if ((*statusL == 1) && (*statusM == 1) && (*statusA == 1))
 		statusEND = 1;
 	return statusEND;
 }
