@@ -132,13 +132,15 @@ CTEST(mode_test, test_mode1)
 	//Given
 	const int lenght = 6;
 	char password[lenght];
+	char nsym[] = "QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
 	
 	//When
-	const int dopsym = mode1(lenght, password);
+	mode1(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -147,13 +149,15 @@ CTEST(mode_test, test_mode1_2)
 	//Given
 	const int lenght = 10;
 	char password[lenght];
+	char nsym[] = "QqWwEeRrTtYyUuIiOoPpAaSsDdFfGgHhJjKkLlZzXxCcVvBbNnMm";
 	
 	//When
-	const int dopsym = mode1(lenght, password);
+	mode1(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -162,13 +166,15 @@ CTEST(mode_test, test_mode2)
 	//Given
 	const int lenght = 6;
 	char password[lenght];
+	char nsym[] = "0123456789";
 	
 	//When
-	const int dopsym = mode2(lenght, password);
+	mode2(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -177,13 +183,15 @@ CTEST(mode_test, test_mode2_2)
 	//Given
 	const int lenght = 15;
 	char password[lenght];
+	char nsym[] = "0123456789";
 	
 	//When
-	const int dopsym = mode2(lenght, password);
+	mode2(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -192,13 +200,15 @@ CTEST(mode_test, test_mode3)
 	//Given
 	const int lenght = 6;
 	char password[lenght];
+	char nsym[] = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789";
 	
 	//When
-	const int dopsym = mode3(lenght, password);
+	mode3(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 	
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -207,13 +217,15 @@ CTEST(mode_test, test_mode3_2)
 	//Given
 	const int lenght = 10;
 	char password[lenght];
+	char nsym[] = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789";
 	
 	//When
-	const int dopsym = mode3(lenght, password);
+	mode3(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 	
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -222,13 +234,15 @@ CTEST(mode_test, test_mode4)
 	//Given
 	const int lenght = 6;
 	char password[lenght];
+	char nsym[] = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm%*?!@#0123456789";
 	
 	//When
-	const int dopsym = mode4(lenght, password);
+	mode4(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 	
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
@@ -237,13 +251,15 @@ CTEST(mode_test, test_mode4_2)
 	//Given
 	const int lenght = 10;
 	char password[lenght];
+	char nsym[] = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm%*?!@#0123456789";
 	
 	//When
-	const int dopsym = mode4(lenght, password);
+	mode4(lenght, password);
 	const int len = slen(password);
+	const int dop = dopsym(password, nsym);
 	
 	//Then
-	ASSERT_EQUAL(0, dopsym);
+	ASSERT_EQUAL(0, dop);
 	ASSERT_EQUAL(len, lenght);
 }
 
